@@ -8,7 +8,8 @@
         <h3 class="page-title">
           <span class="page-title-icon bg-gradient-primary text-white me-2">
             <i class="mdi mdi-home"></i>
-          </span> Dashboard
+          </span> 
+          Dashboard
         </h3>
         <nav aria-label="breadcrumb">
           <ul class="breadcrumb">
@@ -23,7 +24,9 @@
           <div class="card bg-gradient-danger card-img-holder text-white">
             <div class="card-body">
               <img src="images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-              <h4 class="font-weight-normal mb-3">User's<i class="mdi mdi-chart-line mdi-24px float-end"></i>
+              <h4 class="font-weight-normal mb-3"> 
+               User
+                <i class="mdi mdi-chart-line mdi-24px float-end"></i>
               </h4>
               <h2 class="mb-5">$ 15,0000</h2>
               <h6 class="card-text">Increased by 60%</h6>
@@ -83,6 +86,14 @@
     <!-- partial:partials/_footer.html -->
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-@endsection
+<script>
+ 
+ 
+
+</script>
+
+
+
+    @endsection
 
    

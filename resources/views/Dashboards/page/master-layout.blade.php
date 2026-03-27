@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="vendor/vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" href="vendor/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="vendor/vendors/font-awesome/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <link rel="stylesheet" href="vendor/vendors/font-awesome/css/font-awesome.min.css" />
@@ -60,11 +62,11 @@
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                 <div class="nav-profile-img">
-                  <img src="assets/images/faces/face1.jpg" alt="image">
+                  {{--  <img src="assets/images/faces/face1.jpg" alt="image">  --}}
                   <span class="availability-status online"></span>
                 </div>
                 <div class="nav-profile-text">
-                  <p class="mb-1 text-black">David Greymaax</p>
+                  <p class="mb-1 text-black" id="name"></p>
                 </div>
               </a>
               <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
@@ -191,23 +193,24 @@
             <li class="nav-item nav-profile">
               <a href="#" class="nav-link">
                 <div class="nav-profile-image">
-                  <img src="assets/images/faces/face1.jpg" alt="profile" />
+                  
                   <span class="login-status online"></span>
                   <!--change to offline or busy as needed-->
                 </div>
                 <div class="nav-profile-text d-flex flex-column">
-                  <span class="font-weight-bold mb-2">David Grey. H</span>
-                  <span class="text-secondary text-small">Project Manager</span>
+                  <span class="font-weight-bold mb-2" id="userName"> </span>
+                  <span class="text-secondary text-small" id="role">Project Manager</span>
                 </div>
                 <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
+              <a class="nav-link" href="{{ route('dashboard')  }}">
                 <span class="menu-title">Dashboard</span>
                 <i class="mdi mdi-home menu-icon"></i>
               </a>
             </li>
+            
             <li class="nav-item">
               <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <span class="menu-title">Category</span>
@@ -217,24 +220,64 @@
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('category') }}">Category</a>
+                    <a class="nav-link" href="{{ route('category') }}">ADD Category</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/buttons.html">Sub Category</a>
+                    <a class="nav-link" href="{{ route('allcategory')}}">View Category</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('subcategory') }}">Sub Category</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('viewSubCategory') }}">view SubCategory</a>
                   </li>
                   
                 </ul>
               </div>
+            
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="#ui-brand" aria-expanded="false" aria-controls="ui-basic">
+                <span class="menu-title">Brands & Colors</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi mdi-tag menu-icon"></i>
+              </a>
+              <div class="collapse" id="ui-brand">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('brand') }}">ADD Brand</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('allbrands')}}">View Brand</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('color') }}">ADD Color</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('allcolor')}}">View Color</a>
+                  </li>
+                </ul>
+              </div>
+            
             </li>
             <li class="nav-item">
               <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
-                <span class="menu-title">Orders</span>
+                <span class="menu-title">Product</span>
                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>
               </a>
               <div class="collapse" id="icons">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/icons/font-awesome.html">All Orders</a>
+                    <a class="nav-link" href="{{ route('addproduct')}}">ADD Product</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('view-product')}}">View Product</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('productDetails')}}">ADD Product details</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('view-product-details')}}">View Product details </a>
                   </li>
                 </ul>
               </div>
@@ -254,14 +297,14 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-                <span class="menu-title">Charts</span>
-                <i class="mdi mdi-chart-bar menu-icon"></i>
+              <a class="nav-link" data-bs-toggle="collapse" href="#order" aria-expanded="false" aria-controls="charts">
+                <span class="menu-title">Orders</span>
+             <i class="mdi mdi-cart menu-icon"></i>
               </a>
-              <div class="collapse" id="charts">
+              <div class="collapse" id="order">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/charts/chartjs.html">ChartJs</a>
+                    <a class="nav-link" href="{{ route('order.admin')}}">Orders</a>
                   </li>
                 </ul>
               </div>
@@ -309,7 +352,7 @@
         </nav>
       @yield('admin-content')
 
-      <footer class="footer">
+      <footer class="footer" >
         <div class="d-sm-flex justify-content-center justify-content-sm-between">
           <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2025 <a href="https://www.henry.com/" target="_blank">henryShopping</a>. All rights reserved.</span>
         </div>
@@ -342,6 +385,28 @@
   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
+  //fetch user details
+  const Token = localStorage.getItem('api_token');
+  const userDetails = JSON.parse(localStorage.getItem('user_details'))
+ fetch('/api/LoginUserDetails', {
+  method: 'GET',
+  headers: {
+       'Authorization' : `Bearer ${Token}`,
+  },
+ }).then((response) => response.json())
+ .then((data) => {
+ if(data.status){
+  document.querySelector('#userName').innerText = data.user.name;
+  document.querySelector('#name').innerText = data.user.name;
+  document.querySelector('#role').innerText = data.user.role;
+ }else{
+  document.querySelector('#userName').innerText = 'User';
+  document.querySelector('#name').innerText = 'creater';
+  document.querySelector('#role').innerText = 'Project manager';
+ }
+ });
+
+
 // logout fetch
 const logoutBtn = document.querySelector('#logoutBtn');
 logoutBtn.addEventListener('click', function(){
@@ -355,7 +420,8 @@ logoutBtn.addEventListener('click', function(){
  }).then((response) => response.json())
  .then((data) => {
  if(data.status){
-  console.log(data);
+ 
+ 
   
   localStorage.removeItem('api_token');
   window.location.href = '{{ route('logout') }}';

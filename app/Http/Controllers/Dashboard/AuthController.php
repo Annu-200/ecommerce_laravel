@@ -131,7 +131,14 @@ class AuthController extends Controller
             'user'=>$data,
         ], 200);
     }
-
+    public function LoginUserDetails(Request $request){
+        $user = $request->user();
+        return response()->json([
+            'status'=>"true",
+            'message'=>"user Details",
+            'user'=>$user
+        ] ,200);
+    }
     /**
      * Show the form for creating a new resource.
      */

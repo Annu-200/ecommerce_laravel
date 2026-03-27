@@ -54,13 +54,11 @@
                             </td>
                             <td>
                                ${user.role === 'admin'  ? '<label class="badge badge-gradient-success">Admin</label>'  
-                                   : '<label class="badge badge-gradient-info">Customer</label>'
+                                   : '<label class="badge badge-danger">custmer</label>'
                             }
                             </td>
                             <td> ${user.email} </td>
                           </tr>` 
-                          
-
                           return tbody.innerHTML += userbody
                 });
       });

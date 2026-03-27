@@ -54,7 +54,7 @@
 
             success: function(response){  
                 const token = localStorage.setItem('api_token', response.token);
-                console.log(response)
+                
                 $('#form-success').show().text(response.message);
                 window.location.href = "{{ route('dashboard')  }}" ;
                 $('#loginCheck').trigger("reset");
@@ -76,6 +76,7 @@
 // dashboard redirect 
 $(document).ready(function(){
             const Token = localStorage.getItem('api_token');
+            
 
             $.ajax({
                 type: "GET",
@@ -87,6 +88,7 @@ $(document).ready(function(){
                 success: function (response) {
                     //Do anything
                     console.log('token',response);
+                    const userDetails = localStorage.setItem('user_details', JSON.stringify(response.user))
                     window.location.href=response.redirect
 
                 },

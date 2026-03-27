@@ -13,7 +13,8 @@
                 <div class="col-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-
+                                <div class="text-danger" @style('display:none') id="error-msg"></div>
+                                <div class="text-success" @style('display:none') id="successMsg"></div>
                             <form class="forms-sample" id='submitCat' method="POST" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="exampleInputName1" class="mt-3">Category Title</label>
@@ -58,6 +59,8 @@
             const submitCat = document.querySelector('#submitCat');
             submitCat.addEventListener('submit', async function(e) {
                 e.preventDefault();
+                const errorMsg = document.querySelector('#error-msg')
+               const successMsg = document.querySelector('#successMsg')
                 const token = localStorage.getItem('api_token');
                 let formData = new FormData();
 
@@ -72,7 +75,7 @@
                 formData.append('cat_description', description);
                 formData.append('status', status);
                 formData.append('cat_images', cat_image);
-console.log(formData)
+
 
                 // insert by fetch
                 try {
@@ -87,13 +90,29 @@ console.log(formData)
                     let data = await response.json();
                     console.log(data);
                     if (data.status) {
-                        alert('Category created successfully!');
+                        errorMsg.style.display = 'none';
+                        successMsg.style.display = 'Block';
+                        successMsg.innerText = data.message;
                         window.location.reload();
                     } else {
-                        alert(data.message || 'Error creating category');
+                        errorMsg.style.display = 'Block';
+                        successMsg.style.display = 'none';
+                        if(Array.isArray(data.errors)){
+                            errorMsg.innerText = data.errors.join(', ');
+                        window.location.href = 'http://127.0.0.1:8000/allcategory' 
+
+                        }else{
+                            errorMsg.innerText = data.errors;
+                        window.location.reload();
+
+                        }       
                     }
+                  
+                    
+
+
                 } catch (error) {
-                    console.log(error);
+                   
                     alert('An error occurred while creating the category');
                 }
             });

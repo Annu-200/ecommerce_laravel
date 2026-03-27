@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Models;
+
+use App\Models\Product;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
+
+class Brand extends Model
+{
+
+    use HasApiTokens;
+    protected  $guarded = [];
+    
+    public function product(){
+        return $this->hasMany(Product::class,'brand_id', 'id');
+    }
+}
