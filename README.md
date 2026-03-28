@@ -1,4 +1,3 @@
-<img width="1899" height="970" alt="home" src="https://github.com/user-attachments/assets/1714db0b-a4e8-4b59-8f3a-240f2ba6cab2" />
 # 🛒 Laravel E-Commerce Project
 
 A fully functional **E-Commerce Web Application** built using Laravel.
