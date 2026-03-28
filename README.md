@@ -1,66 +1,159 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<img width="1899" height="970" alt="home" src="https://github.com/user-attachments/assets/1714db0b-a4e8-4b59-8f3a-240f2ba6cab2" />
+# 🛒 Laravel E-Commerce Project
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A fully functional **E-Commerce Web Application** built using Laravel.
+This project demonstrates real-world features like product management, cart system, order processing, and admin dashboard.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* 🏠 Home page with product listing
+* 📂 Category-based product filtering
+* 🔍 Live search functionality
+* 🛒 Add to cart system
+* 💳 Payment GetWay in Razorpay
+* 📦 Order placement & tracking
+* 👤 User authentication (Login/Register)
+* 🛠️ Admin panel for:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+  * Product management
+  * Category management
+  * Order management
+  * Stock management
+---
 
-## Learning Laravel
+## 🛠️ Tech Stack
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+* **Backend:** Laravel (PHP Framework)
+* **Frontend:** Blade, HTML, CSS, Bootstrap, JavaScript
+* **Database:** MySQL
+* **Tools:** Git, GitHub
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 📂 Project Structure
 
-## Laravel Sponsors
+```
+app/
+├── Http/
+├── Models/
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+resources/
+├── views/
+│   ├── dashboards/
+│   ├── layouts/
+│   └── components/
 
-### Premium Partners
+routes/
+├── web.php
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+public/
+├── uploads/
+```
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## ⚙️ Installation Guide
 
-## Code of Conduct
+Follow these steps to run the project locally:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 1️⃣ Clone the repository
 
-## Security Vulnerabilities
+```bash
+git clone https://github.com/Annu-200/ecommerce_laravel.git
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 2️⃣ Go to project folder
 
-## License
+```bash
+cd ecommerce_laravel
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 3️⃣ Install dependencies
+
+```bash
+composer install
+npm install
+```
+
+### 4️⃣ Setup environment file
+
+```bash
+cp .env.example .env
+```
+
+### 5️⃣ Generate application key
+
+```bash
+php artisan key:generate
+```
+
+### 6️⃣ Configure database
+
+Update `.env` file:
+
+```
+DB_DATABASE=your_db_name
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### 7️⃣ Run migrations
+
+```bash
+php artisan migrate
+```
+
+### 8️⃣ Start server
+
+```bash
+php artisan serve
+```
+
+---
+
+## ▶️ Usage
+
+* Visit: `http://127.0.0.1:8000`
+* Register/Login as a user
+* Browse products and place orders
+* Access admin panel to manage data
+
+---
+
+## 📸 Screenshots
+
+(Add your project screenshots here 👇)
+ 
+<img width="1886" height="911" alt="admin" src="https://github.com/user-attachments/assets/3912c943-a76e-4ce5-a6e2-d71f1d73f197" />
+<img width="1899" height="970" alt="home" src="https://github.com/user-attachments/assets/7c628e94-cde7-4a5f-b44b-023a67135394" />
+
+
+/screenshots/admin.png
+```
+
+---
+
+## 🎯 Future Improvements
+
+* Product reviews & ratings
+* API development (for React frontend)
+* Performance optimization
+
+---
+
+## 👤 Author
+
+**Annu Maghwal**
+
+* GitHub: https://github.com/Annu-200
+
+---
+
+## ⭐ Support
+
+If you like this project, give it a ⭐ on GitHub!
+
+---
+
