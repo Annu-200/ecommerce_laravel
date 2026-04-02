@@ -41,7 +41,7 @@ Route::get('/chechout', [CheckoutController::class, 'index'])->name('checkout');
 Route::view('/login', 'pages.login')->name('login');
 Route::view('/register', 'pages.register')->name('register'); 
 
-Route::get('/order/{id}', [OrderController::class, 'success'])->name('order-success'); 
+Route::get('/order/{id}', [OrderController::class, 'success'])->name('order.success'); 
 Route::get('/order.delete/{id}', [OrderController::class, 'orderDestroy'])->name('order.destroy');
 Route::get('/order-track', [OrderController::class, 'trackOrder'])->name('order.track');
 Route::post('/order-status', [OrderController::class, 'trackOrderStatus'])->name('order.status');
@@ -82,4 +82,8 @@ Route::get('live-search',[ProductController::class, 'liveSearch'])->name('live-s
 // razorapay route
 Route::get('razorpay-payment/{id}',[paymentController::class, 'payment'])->name('razorpay.payment');
 Route::post('payment-success',[paymentController::class, 'paymentSuccess'])->name('payment.success');
+
+Route::get('error', function(){
+    return view('error');
+})->name('error');
 
