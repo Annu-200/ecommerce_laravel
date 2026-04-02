@@ -100,10 +100,11 @@ class CheckoutController extends Controller
               'taxt'=>$tax,
           ]);
           $orderNum = "ORD-" . date('Ymd') . '-' .str_pad($order->id, 5, 0 , STR_PAD_LEFT);
-        
+          
           $order->update([
             'order_num'=>$orderNum
         ]);
+        session()->put('order_num', $order->order_num);
 
         foreach($cart as $item){
          OrderItem::create([

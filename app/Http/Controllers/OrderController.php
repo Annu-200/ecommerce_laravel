@@ -29,7 +29,11 @@ class OrderController extends Controller
        if(!$order){
             return redirect()->route('error')->with('error', 'Order not found.');
        }
-           
+    //    dd(session()->all(), $order->order_num);
+        $currentUser = session()->get('order_num', []);
+        if($currentUser != $order->order_num){
+            return redirect()->route('error')->with('error', 'Unauthorized access. Please check your order number and try again.');
+        }
         if($order->payment_mode == "online"){  
 
                 $order->update([
